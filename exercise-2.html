@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <!--first task-->
+    <h1>First Task</h1>
+    <p>display vowels in red color and Display characters in green color.</p>
+    <!--Vowels color red and other characters green color-->
+    <input type="text" id="name" onfocus="this.value=''" maxlength="1"><br><br>
+    <button type="button" onclick="displayChar()">Submit</button>
+
+    <p id="color"></p>
+    
+    
+   <script>
+      
+       function displayChar() {
+            var str = document.getElementById("name").value;
+        
+           if(str == 'a' || str == 'i' || str == 'e' || str == 'o' || str == 'u') {
+               document.getElementById("color").style.color = '#FF0000';
+           }
+
+               else {
+                 document.getElementById("color").style.color = '#00FF00';
+               }
+           document.getElementById("color").innerHTML = str;
+       }
+   </script>
+
+
+
+<!--second task-->
+<h1>Second Task</h1>
+<p>Display object which has minimum age and maximum age</p>
+<!--display array and maximum and minimum age-->
+Name::<input type="text" id="textname" onfocus="this.value= ''"><br><br>
+Age::<input type="number" id="numberage"onfocus="this.value=''"><br><br>
+<button onclick="myobject()">Submit</button>
+<button onclick="mymaximumage()">Maximum age</button>
+<button onclick="myminimumage()">Minimum age</button>
+
+<p id="displayobject"></p>
+<p id="displaymaxage"></p>
+<script>
+    var array = []
+    
+   function myobject() {
+       var displayobject = {
+           name: document.getElementById("textname").value,
+           age: document.getElementById("numberage").value
+       }
+       array.push(displayobject);
+       document.getElementById("displayobject").innerHTML = JSON.stringify(array);     
+   }
+        
+   function mymaximumage() {
+       let max = [];
+    
+       for (let i = 0; i < array.size; i++) {
+           if (array[i] > max) {
+               array[i] = max;
+               
+           }
+       }
+       document.getElementById("displaymaxage").innerHTML = max;
+        
+   }
+  
+</script>
+
+
+<!--ThirdTask-->
+<h1>Third Task</h1>
+<p>The string replace all 'a' character with 'c'.</p>
+<!--string replace a and character with c-->
+<input type="text" id="text" onfocus="this.value=''"><br><br>
+<button onclick="displaystr()">Submit</button>
+<p id="replace"></p>
+   <script>
+       function displaystr() {
+           let char = document.getElementById("text").value;
+
+           if(char => char == 'a') {
+               document.getElementById("replace").innerHTML = char.replace(/a/gi, "c");
+           } 
+       }
+   </script>
+   
+
+
+
+   <!--Forth Task-->
+    <h1>Forth Task</h1>
+    <p>Check "world" is starts at position 7 , if yes then display true else display false.
+    </p>
+    <!--Check this world is start at position 7 , yes then display true ya false-->
+    <input type="text" id="textstring"onfocus="this.value=''"><br><br>
+    <button onclick="displayposition()">Submit</button>
+    <p id="checkstring"></p>
+    <script>
+     function displayposition() {
+        var string = document.getElementById("textstring").value;
+
+        if(string.startsWith("world", 7) )  {
+            document.getElementById("checkstring").innerHTML =  "true";        
+        }
+        else {
+            document.getElementById("checkstring").innerHTML =  "False";
+        }
+    }
+    
+    
+    </script>
+    </body>
+</html>

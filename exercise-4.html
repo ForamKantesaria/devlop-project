@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>First Task</h1>
+        <p>Display Array,Only name,total salary, whose name is 'test1'.</p>
+        Id:<input type="number" id="number"><br><br>
+        Name:<input type="text" id="text"><br><br>
+        salary:<input type="number" id="numbers"><br><br>
+        <button onclick="display()">Submit</button>
+     
+        <p id="object"></p>
+        <p id="displayarray"></p>
+        <p id="displayname"></p>
+        <p id="displaysalary"></p>
+        <script>
+            var array = []
+            function  display() {
+               var objarray = {
+                   id: document.getElementById("number").value,
+                   name: document.getElementById("text").value,
+                   salary: document.getElementById("numbers").value
+               }
+               array.push(objarray);
+               document.getElementById("object").innerHTML = JSON.stringify(array);
+
+               let name = array.map((i) => i.name);
+               document.getElementById("displayname").innerHTML = name;
+               
+              var total = array.reduce((a, [{salary} = [obj]]) => a + total, 0);
+              document.getElementById("total").innerHTML = total;
+               
+               }
+
+              
+        </script>
+    </body>
+</html>

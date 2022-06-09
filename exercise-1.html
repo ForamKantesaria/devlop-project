@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+   <html>
+       <body>
+           <!--First Task-->
+           <h1>First Task</h1>
+           <h3>Display count of character entered in input.</h3>
+           <!--count of character-->
+           <input type="text" id="count"><br><br>
+           <button onclick="myCount()">Count</button>
+           <p id="char"></p>
+           <script>
+               function myCount() {
+                var Count = document.getElementById("count").value;
+                document.getElementById("char").innerHTML = Count.length;
+                  }
+           </script>
+       
+       <!--Second Task-->
+       <h1>Second Task</h1>
+       <h3>Display name and age in object.</h3>
+       <!--Display object with name and age-->
+       Name::<input type="text" id="name"><br><br>
+       Age::<input type="number" id="age"><br><br>
+       <button onclick="displayobject()">Display name and age</button>
+      
+       <p id="obj"></p>
+       
+       <script>
+           function  displayobject() { 
+               var obj = {
+                   name: document.getElementById("name").value,
+                   age: document.getElementById("age").value
+               }
+               document.getElementById("obj").innerHTML = JSON.stringify(obj);      
+           }
+          
+       </script>
+
+       <!--Third Task-->
+       <h1>Third Task</h1>
+       <h3>Display name and age in array</h3>
+       <!--Display array with name and age-->
+       Name::<input type="text" id="name1"><br><br>
+       Age::<input type="number" id="age1"><br><br>
+       <button onclick="displayobjectarr()">Display name and age</button>
+    <p id="arrayobj"></p>
+    <script>
+        var arr = []
+        function  displayobjectarr() { 
+            var arrayobj = {
+                name: document.getElementById("name1").value,
+                age: document.getElementById("age1").value
+            } 
+                arr.push(arrayobj);
+            document.getElementById("arrayobj").innerHTML = JSON.stringify(arr);    
+        }   
+    </script>
+       </body>
+   </html>

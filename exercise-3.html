@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <!--First Task-->
+        <h1>First Task</h1>
+        <p>Display array of object which date is of today's date.</p>
+        <!--Display object, array and today date-->
+        Id:: <input type="number" id="inputnumber" onfocus="this.value=''"><br><br>
+        Description::<input type="text" id="text" onfocus="this.value=''"><br><br>
+        Date::<input type="date" id="date"><br><br>
+        <button onclick="myobject()">Submit</button>
+        <button onclick="displaydate()">Display Date</button>
+        <p id="object"></p>
+        <p id="displayDate"></p>
+            <script>
+                var array = []
+                function myobject() {
+                    var arrayobj = {
+                        id: document.getElementById("inputnumber").value,
+                        description: document.getElementById("text").value,
+                        date: document.getElementById("date").value
+                    }
+                    array.push(arrayobj);
+                    document.getElementById("object").innerHTML = JSON.stringify(array);
+
+                }
+               
+                function displaydate() {
+                    
+                    var dateobj = new Date();
+                    var todayDate = dateobj.toISOString().split('T')[0];
+                    console.log(todayDate);
+                    
+                    var filteredArray = array.filter(i => i.date == todayDate);
+                    
+                    document.getElementById("displayDate").innerHTML = JSON.stringify(filteredArray);
+                }
+
+            </script>
+
+
+              <!--Second Task-->
+            <h1>Second Task</h1>
+            <p>Find out next digit of enetered digit.</p>
+            <!--display next number-->
+            <input type="number" id="number" onfocus="this.value=''"><br><br>
+            <button onclick="displaynextdigit()">Submit</button>
+            <p id="digitnumber"></p>
+            <script>
+                function displaynextdigit() {
+                    var digit = document.getElementById("number").value;
+                    document.getElementById("digitnumber").innerHTML = parseInt(digit) + 1;
+                }
+            </script>
+
+         <!--Third Task-->
+         <h1>Third Task</h1>
+         <p> For the given string replace all 'a' character with 'z' , only if 'a' is at first position in word.
+      </p>
+      <!--Character a replace and display character z-->
+      <input type="text" id="string"><br><br>
+      <button onclick="replacechar()">Submit</button>
+      <p id="replaceCharacter"></p>
+      <script>
+          function replacechar() {
+              var str = document.getElementById("string").value;
+  
+            //   if(str == 'a') {
+                  document.getElementById("replaceCharacter").innerHTML = str.replace(/\ba/g, "z");
+            //   }
+          }
+      </script>   
+    
+
+    <h1>Forth Task</h1>
+    <p>Display reverse string</p>
+    <input type="text" id="inputtext"><br><br>
+    <button onclick="displayreverse()">Submit</button>
+     <p id="stringsplit"></p>
+     <p id="stringreverse"></p>
+     <p id="stringjoin"></p>
+    <script> 
+    function displayreverse() {
+        let splitstring = document.getElementById("inputtext").value;
+         document.getElementById("stringsplit").innerHTML = splitstring.split("");
+         let reversestring = document.getElementById("stringreverse").innerHTML = splitstring.split("").reverse();
+         document.getElementById("stringreverse").innerHTML = reversestring;
+         let joinstring = document.getElementById("stringjoin").innerHTML = splitstring.split("").reverse().join("");
+         document.getElementById("stringjoin").innerHTML = joinstring;     
+        
+    }
+    </script>
+    <h1>Fifth Task</h1>
+    <p>Display total count of vowels inside input string.</p>
+    <input type="text" id="letter"><br><br>
+    <button onclick="displaycount()">Submit</button>
+    <p id="Count"></p>
+    <p id="vowel"></p>
+    <script>
+        function  displaycount() {
+           var string = document.getElementById("letter").value;
+           var result = string.match(/[a,e,o,u,i]/gi).length;
+            document.getElementById("Count").innerHTML = result;
+            
+           
+
+        }
+
+
+
+        
+    </script>
+    </body>
+</html>
